@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "jwt-decode": "^3.1.2"
+    "dotenv": "^16.0.3",
+    "jwt-decode": "^3.1.2",
+    "mongoose": "^6.8.1"
   }
 }
