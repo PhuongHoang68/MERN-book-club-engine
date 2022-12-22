@@ -1,6 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { isContext } = require('vm');
-const { User, Book } = require('../models');
+const { User} = require('../models');
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -16,14 +15,18 @@ const resolvers = {
         } 
         throw new AuthenticationError("Need to be logged in");
     },
+  },
     Mutation: {
-      addUser: async(parent, args) => {
+      addUser: async(parent, args, context) => {
         const user = await User.create(args);
         const token= signToken(user);
 
-        return {token, user};
+        console.log(token);
+        console.log(user);
+
+        return { token, user };
       },
-      login: async (parent, { email, password }) => {
+      login: async (parent, { email, password }, context) => {
         const user = await User.findOne({ email });
       
         if (!user) {
@@ -69,4 +72,6 @@ const resolvers = {
 
     }
 }
-}
+
+
+module.exports = resolvers;
