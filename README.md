@@ -7,6 +7,10 @@ A book search website powered by Google Books API. This site allows users to loo
 Built using Express.js, and an Apollo Server to run GraphQL queries and mutations
 
 ## What it looks like:
+![Screenshot of Book Lovers landing page](book-search.png)
+
+## Deployed link: 
+https://book-lovers-united.herokuapp.com/
 
 ## Built by:
 Phuong Hoang. Reach out @p.hoang6897@yahoo.com
